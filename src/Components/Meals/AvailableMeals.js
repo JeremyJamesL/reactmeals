@@ -1,6 +1,6 @@
 import Card from "../UI/Card"
-import MealItem from "./MealItem"
-import {DUMMY_MEALS} from "../Data/dummy-meals"
+import MealItem from "./MealItem/MealItem"
+import {DUMMY_MEALS} from "../../Data/dummy-meals"
 import classes from "./AvailableMeals.module.css"
 
 function AvailableMeals() {
@@ -11,6 +11,7 @@ function AvailableMeals() {
           mealID={meal.id} 
           mealName={meal.name}
           mealDescription={meal.description}
+          mealPrice={meal.price}
         />
     )
   }

@@ -1,15 +1,17 @@
 import classes from "./MealItemForm.module.css"
-import Input from "../UI/Input"
-import AppContext from "../Context/app-context"
+import Input from "../../UI/Input"
+import AppContext from "../../../Context/app-context"
 import { useContext } from "react"
 
-function MealItemForm() {
+function MealItemForm(props) {
 
   const ctx = useContext(AppContext);
+  const meal = props.mealObj;
   
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    ctx.updateProductCounter(ctx.productCounter + 1) 
+    const updatedMeal = {...meal, amount: e.target.previousElementSibling.childNodes[1].value};
+    ctx.handleMealAdd(updatedMeal);
   }
 
   return (

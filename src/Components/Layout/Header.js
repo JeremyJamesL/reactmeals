@@ -1,6 +1,6 @@
 import styles from "./Header.module.css"
-import headerImg from "../Assets/meals.jpeg"
-import HeaderCartButton from "../Components/HeaderCartButton"
+import headerImg from "../../Assets/meals.jpeg"
+import HeaderCartButton from "./HeaderCartButton"
 
 function Header() {
   return (
