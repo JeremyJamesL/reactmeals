@@ -30,7 +30,7 @@ function Cart(props) {
         </ul>
         <div className={classes.total}>
             <span>Total Amount</span>
-            <span>${priceSum}</span>
+            <span>${priceSum.toFixed(2)}</span>
         </div>
         <div className={classes.actions}>
             <button onClick={() => ctx.updateShowModal(false)}>Close</button>
