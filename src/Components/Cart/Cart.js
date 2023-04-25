@@ -6,6 +6,16 @@ import { useContext } from "react"
 function Cart(props) {
 
   const ctx = useContext(AppContext);
+  
+  // Getting total price of meals
+  const initialValue = 0;
+  const priceArray = [];
+  props.mealsInCart.forEach((m) => {
+    priceArray.push(m.price * m.amount);
+  })
+  const priceSum = priceArray.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue);
+  console.log(props.mealsInCart);
+
 
   const renderMealsInCart = (meal) => {
     return (
@@ -20,7 +30,7 @@ function Cart(props) {
         </ul>
         <div className={classes.total}>
             <span>Total Amount</span>
-            <span>$33</span>
+            <span>${priceSum}</span>
         </div>
         <div className={classes.actions}>
             <button onClick={() => ctx.updateShowModal(false)}>Close</button>

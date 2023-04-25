@@ -3,7 +3,7 @@ import MealItem from "./MealItem/MealItem"
 import {DUMMY_MEALS} from "../../Data/dummy-meals"
 import classes from "./AvailableMeals.module.css"
 
-function AvailableMeals() {
+function AvailableMeals(props) {
 
   const renderMeals = (meal) => {
     return (
@@ -12,6 +12,7 @@ function AvailableMeals() {
           mealName={meal.name}
           mealDescription={meal.description}
           mealPrice={meal.price}
+          updatePulseBtn={props.updatePulseBtn} 
         />
     )
   }

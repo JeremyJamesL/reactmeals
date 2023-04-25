@@ -1,8 +1,21 @@
 import classes from "./CartItem.module.css"
+import AppContext from "../../Context/app-context"
+import { useContext } from "react"
 
 function CartItem(props) {
+
+  const ctx = useContext(AppContext);
+
+  const handleIncrement = (condition, ID) => {
+    if(condition === 'more') {
+        ctx.handleMealInc(ID);
+    } else {
+        ctx.handleMealDec(ID);
+    }
+  }
+
   return (
-    <li className={classes["cart-item"]}>
+    <li className={classes["cart-item"]} id={props.mealID}>
         <div>
         <h2>
             {props.mealName}
@@ -12,13 +25,13 @@ function CartItem(props) {
                 ${props.mealPrice}
             </div>
             <div className={classes.amount}>
-                {props.mealAmount}
+                {props.mealAmount.toString()}
             </div>
         </div>
         </div>
         <div className={classes.action}>
-                <button>-</button>
-                <button>+</button>
+                <button onClick={() => handleIncrement('less', props.mealID)}>-</button>
+                <button onClick={() => handleIncrement('more', props.mealID)}>+</button>
         </div>
 
     </li>

@@ -16,7 +16,7 @@ function MealItem(props) {
              <div className={classes.description}>{props.mealDescription}</div>
              <div className={classes.price}>${props.mealPrice}</div>
         </div>
-        <MealItemForm mealObj={currMealObj} />
+        <MealItemForm mealObj={currMealObj} updatePulseBtn={props.updatePulseBtn} />
     </li>
   )
   }
