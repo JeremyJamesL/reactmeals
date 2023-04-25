@@ -1,7 +1,7 @@
 import classes from "./MealItemForm.module.css"
 import Input from "../../UI/Input"
 import AppContext from "../../../Context/app-context"
-import { useContext, useState, useEffect } from "react"
+import { useContext } from "react"
 
 function MealItemForm(props) {
   const ctx = useContext(AppContext);
