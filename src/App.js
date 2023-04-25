@@ -21,11 +21,11 @@ const mealReducer = (meals, action) => {
         }
 
         case "incrementMeal": {
-          return meals.map((meal) => meal.id == action.mealID ? {...meal, amount: meal.amount + 1} : meal)
+          return meals.map((meal) => meal.id === action.mealID ? {...meal, amount: meal.amount + 1} : meal)
         }
 
         case "decrementMeal": {
-          return meals.map((meal) => meal.id == action.mealID ? {...meal, amount: meal.amount - 1} : meal)
+          return meals.map((meal) => meal.id === action.mealID ? {...meal, amount: meal.amount - 1} : meal)
         }
       }
 }
